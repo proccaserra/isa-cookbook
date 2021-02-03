@@ -1,20 +1,22 @@
-Downloading files stored in Github
+# Downloading files stored in Github
 ==================================
 
-The ISA GitHub Adapter class
-----------------------------
+## The ISA GitHub Adapter class
+
 
 The GitHub API wrapper/adapter may be useful to retrieve ISA datasets
 (as JSON or Tabs) or configuration files in XML format. The core class,
 `IsaGitHubStorageAdapter` can be instantiated with or without
 authorisation.
 
-### Usage without authentication
+***
+
+## Usage without authentication
 
 If authentication is not required to access the required resource, you
 can directly instantiate an adapter object and use it.
 
-``` {.sourceCode .python}
+```python
 from isatools.net.storage_adapter import IsaGitHubStorageAdapter
 from zipfile import ZipFile
 adapter = IsaGitHubStorageAdapter()
@@ -41,12 +43,14 @@ xml_obj = adapter.retrieve('isaconfig-2013222/protein_expression_ge.xml',
 xml_obj.getroot()
 ```
 
-### Usage with authentication
+***
+
+## Usage with authentication
 
 To access as authenticated user, the recommended way is to instantiate
 the storage adapter in a with statement.
 
-``` {.sourceCode .python}
+```python
 with IsaGitHubStorageAdapter(username='yourusername', password='yourpw',
                              note='test_api') as adapter:
     adapter.is_authenticated # true
@@ -56,7 +60,7 @@ with IsaGitHubStorageAdapter(username='yourusername', password='yourpw',
 Otherwise you must explicitly call the `close()` method to delete the
 current authorisation from the GitHub server
 
-``` {.sourceCode .python}
+```python
 adapter = IsaGitHubStorageAdapter(username='yourusername', password='youpw', note='test_api')
 adapter.is_authenticated # True
 # do stuff...

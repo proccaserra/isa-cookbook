@@ -10,6 +10,16 @@ $breakpoint-sm: 576px;
 // Colors
 $non-content-grey: #5a5a5a;
 
+$isa-green: #9ec65e;
+
+$fairplus-orange: #fc7a4a;
+$fairplus-fucsia: #8038d1;
+$fairplus-purple: #300861;
+$fairplus-bordeaux: #7e0038;
+// $link-color: #0071bc;
+$link-color: #9ec65e;
+
+
 /*********************************************
 * Whole page *
 *********************************************/
@@ -43,13 +53,13 @@ main.bd-content {
 
             &:hover {
                 background-color: transparent;
-                color: #0071bc;
+                color: $link-color;
                 opacity: 1 !important;
             }
         }
 
         a, a:visited {
-            color: #0071bc;
+            color: $link-color;
         }
 
         h1, h2, h3, h4, h5 {
@@ -317,6 +327,16 @@ div.highlight {
     background: none;
 }
 
+// Thebelab over-rides
+.thebelab-cell {
+    border: none !important;
+}
+
+button.thebe-launch-button {
+    height: 2.5em;
+    font-size: 1em;
+}
+
 
 /*********************************************
 * Top Bar *
@@ -415,8 +435,8 @@ a.dropdown-buttons i {
 
 button.topbarbtn img {
     height: 1.15em;
-    padding-right: 6px;
-    margin-left: -5px;
+    padding-right: 1px;
+    margin-left: 15px;
 }
 
 #navbar-toggler {
@@ -508,11 +528,11 @@ button.topbarbtn img {
 
         // TOC link color
         a:hover, li.active > a.active {
-            color: #0071bc;
+            color: $link-color;
         }
 
         li.active > a.active {
-            border-left: 2px solid #0071bc;
+            border-left: 2px solid $link-color;
         }
     }
 
@@ -565,7 +585,7 @@ button.topbarbtn img {
             color: $non-content-grey;
         }
         a:hover, li.active > a, li.active > a:hover {
-            color: #0071bc;
+            color: $link-color;
         }
     }
 
@@ -743,47 +763,6 @@ nav.bd-links {
 *********************************************/
 .prev-next-bottom {
     height: 3em;
-}
-
-
-// Thebelab buttons
-.thebelab-cell {
-    // To ensure that thebelab cells are always the top of the Z-stack
-    position: relative;
-    z-index: 999;
-
-    // Remove styling since we use our own
-    border: 0 !important;
-    border-radius: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 8px !important;
-}
-
-.thebelab-button {
-    z-index: 999;
-    display: inline-block;
-    padding: 0.35em 1.2em;
-    margin: 0px 1px;
-    border-radius: 0.12em;
-    box-sizing:  border-box;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    text-align: center;
-    transition: all 0.2s;
-    background-color: #dddddd;
-    border: 0.05em solid white;
-    color: #000000;
-}
-
-.thebelab-button:hover{
-    border: 0.05em solid black;
-    background-color: #fcfcfc;
-}
-
-
-div.jp-OutputArea-output {
-    padding: 5px;
 }
 
 @import 'print';

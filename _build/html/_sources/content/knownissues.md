@@ -1,8 +1,11 @@
 Known issues
 ============
 
+List of ISA-API changes and fixes:
+
+***
+
 isatools v0.9 package
----------------------
 
 -   Various API packages have been refactored and moved.
     `isatools.model.v1` is now in `isatools.model`. Packages
@@ -24,23 +27,26 @@ isatools v0.9 package
     2.7 and focus on keeping up to date with the current and future
     Python versions
 
+***
+
 isatools v0.8 package
----------------------
 
 -   Issues \#153 is still outstanding, as per below; new issue \#208
     (ISA-Tab validation issue)
 -   SRA/ENA importer and Biocrates importer relies on XSLT2 processing
     only available with SAXON and requires .jar file to run
 
+***
+
 isatools v0.7 package
----------------------
 
 -   Issues \#101, \#153 are still outstanding, as per below
 -   SRA/ENA importer and Biocrates importer relies on XSLT2 processing
     only available with SAXON and requires .jar file to run
 
+***
+
 isatools v0.6 package
----------------------
 
 -   Issues \#146, \#101, \#153 are still outstanding, as per below
 -   SRA/ENA importer and Biocrates importer relies on XSLT2 processing
@@ -50,15 +56,18 @@ isatools v0.6 package
     has been worked on and there is ongoing efforts to improve on the
     current performance of ISA-Tab I/O
 
+***
+
 isatools v0.5 package
----------------------
+
 
 -   All issues inherited from v0.4 (see below)
 -   Currently only Python 3.4 and 3.5 is supported. Python 2.7 support
     is present in the `py2` source branch on Github.
 
+*** 
+
 isatools v0.4 package
----------------------
 
 -   For certain of ISA-Tab table files, the ISA-Tab parser cannot
     disambiguate between process instances where a `Name` column is
@@ -83,7 +92,7 @@ isatools v0.4 package
 To check for possible erroneous pooling events in an ISA-Tab archive,
 you can try something like:
 
-``` {.sourceCode .python}
+```python
 >>> from isatools import utils
 >>> utils.detect_isatab_process_pooling('tests/data/tab/MTBLS1/')
 INFO: Converting ISA-Tab to ISA JSON...
@@ -107,7 +116,7 @@ rectify this, individual values should be put into this `Name` column.
 We can try fix erroneous pooling by filling out an empty `Name` column
 with a corresponding `Protocol REF` by doing the following:
 
-``` {.sourceCode .python}
+```python
 >>> utils.insert_distinct_parameter(open('tests/data/tab/MTBLS1/a_mtbls1_metabolite_profiling_NMR_spectroscopy.txt', 'r+'), 'Extraction')
 Are you sure you want to add a column of hash values in Extract Name? Y/(N)
 >? Y
@@ -122,8 +131,9 @@ there to help you manually fix your ISA-Tabs, not to automatically fix
 them for you. We wil address this issue in more depth in following
 releases.
 
+***
+
 isatools v0.3 package
----------------------
 
 -   `required` constraints on JSON schemas causes validation failure for
     `@id` objects, meaning some constraints using JSON schemas cannot be
@@ -143,8 +153,9 @@ isatools v0.3 package
 -   The legacy functionality (marked in the documentation) relies on
     Java 1.6
 
+***
+
 isatools v0.2 package
----------------------
 
 -   `required` constraints on JSON schemas causes validation failure for
     `@id` objects, meaning some constraints using JSON schemas cannot be
@@ -172,8 +183,9 @@ isatools v0.2 package
     the following default XML configurations: `clinical_chemistry.xml`
     and most are as yet untested.
 
+*** 
+
 isatools v0.1 package
----------------------
 
 -   Characteristics and Factor Values declared in assay tables in ISAtab
     are associated to Sample objects only. This means that when writing

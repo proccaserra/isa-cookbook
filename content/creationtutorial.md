@@ -7,20 +7,19 @@ is not complete and realistic, but it demonstrates the range of
 component classes that you can use to create ISA content, including
 things like sample characteristics, ontology annotations and units.
 
-::: {.important}
-::: {.admonition-title}
-Important
-:::
+
+```{admonition} IMPORTANT
+:class: tip
 
 As a pre-requisite to using ISA model please make sure you have read and
 understood the `ISA Abstract Model </isamodel>`{.interpreted-text
 role="doc"} that the ISA formats are based on.
-:::
+```
 
 Firstly, we need to import the ISA API\'s model classes from the
 `isatools` PyPI package.
 
-``` {.sourceCode .python}
+``` python
 from isatools.model import *
 ```
 
@@ -29,7 +28,7 @@ to simplify the example code. In a real application or script, you might
 decompose the functionality and hook it up to interactive components to
 solicit feedback from a user on-the-fly.
 
-``` {.sourceCode .python}
+```python
 def create_descriptor():
     """Returns a simple but complete ISA-Tab 1.0 descriptor for illustration."""
 
@@ -206,7 +205,7 @@ def create_descriptor():
 
 To write out the ISA-Tab, you can use the `isatab.dumps()` function:
 
-``` {.sourceCode .python}
+```python
 from isatools import isatab
 return isatab.dumps(investigation)  # dumps() writes out the ISA as a string representation of the ISA-Tab
 ```
@@ -219,7 +218,7 @@ the files to the file system.
 Alternatively to write out the ISA JSON, you can use the
 `ISAJSONEncoder` class with the Python `json` package:
 
-``` {.sourceCode .python}
+```python
 import json
 from isatools.isajson import ISAJSONEncoder
 # Note that the extra parameters sort_keys, indent and separators are to make the output more human-readable.
@@ -229,7 +228,7 @@ return json.dumps(investigation, cls=ISAJSONEncoder, sort_keys=True, indent=4, s
 The final lines of code is a `main` routine to invoke the
 `create_descriptor()` function.
 
-``` {.sourceCode .python}
+```python
 if __name__ == '__main__':
     print(create_descriptor())
 ```

@@ -1,23 +1,43 @@
 
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
     <title>Search &#8212; The ISA cookbook</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
     
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -25,14 +45,18 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/mystnb.js"></script>
     <script src="_static/mermaid.js"></script>
     <script src="_static/mermaid.min.js"></script>
     <script src="_static/mermaid.core.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script src="_static/searchtools.js"></script>
     <link rel="canonical" href="https://proccaserra.github.io/isa-cookbook/search.html" />
     <link rel="shortcut icon" href="_static/isa.ico"/>
@@ -41,8 +65,8 @@
   <script src="searchindex.js" defer></script>
   
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 <!-- Opengraph tags -->
@@ -52,7 +76,7 @@
 <meta property="og:description" content="" />
 <meta property="og:image"       content="https://proccaserra.github.io/isa-cookbook/_static/isa_footer_logo.svg" />
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -74,62 +98,144 @@
   <h1 class="site-logo" id="site-title">The ISA cookbook</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="#" method="get">
+</div><form class="bd-search d-flex align-items-center" action="#" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
-  <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="content/index.html">1. ISA tools API</a>
-  </li>
-  <li class="">
-    <a href="content/installation.html">2. ISA-API Installation</a>
-  </li>
-  <li class="">
-    <a href="content/isamodel.html">3. ISA data model</a>
-  </li>
-  <li class="">
-    <a href="content/reading.html">4. Reading in ISA-Tab or ISA JSON</a>
-  </li>
-  <li class="">
-    <a href="content/creation.html">5. Creating ISA content</a>
-  </li>
-  <li class="">
-    <a href="content/validation.html">6. Validating ISA-Tab and ISA JSON</a>
-  </li>
-  <li class="">
-    <a href="content/conversions.html">7. Converting between ISA format</a>
-  </li>
-  <li class="">
-    <a href="content/importdata.html">8. Importing data into ISA formats</a>
-  </li>
-  <li class="">
-    <a href="content/exportdata.html">9. Exporting data from ISA formats</a>
-  </li>
-  <li class="">
-    <a href="content/examples.html">10. Example programs using the ISA API</a>
-  </li>
-  <li class="">
-    <a href="content/github.html">11. Downloading files stored in Github</a>
-  </li>
-  <li class="">
-    <a href="content/knownissues.html">12. Known issues</a>
-  </li>
-  <li class="">
-    <a href="content/notebooks/isa-create-sample-assay-plan-htp-imaging.html">13. ISA Create - Sample Assay Plan as a Graph: Phenotyping by HT imaging Spectrometry</a>
-  </li>
-  <li class="">
-    <a href="content/notebooks/isa-create-sample-assay-plan-lc-dad.html">14. ISA Create - Sample Assay Plan as a Graph: LC-Diode-Array-Assay Spectrometry</a>
-  </li>
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/index.html">
+   ISA tools API
+  </a>
+ </li>
 </ul>
-</nav>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/installation.html">
+   ISA-API Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/isamodel.html">
+   ISA data model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/reading.html">
+   Reading in ISA-Tab or ISA JSON
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/validation.html">
+   Validating ISA-Tab and ISA JSON
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/creation.html">
+   Creating ISA content
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/importdata.html">
+   Importing data into ISA formats
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/exportdata.html">
+   Exporting data from ISA formats
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/conversions.html">
+   Converting between ISA format
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/examples.html">
+   Example programs using the ISA API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/github.html">
+   Downloading files stored in Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/knownissues.html">
+   Known issues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/creationtutorial.html">
+   Tutorial: describing a simple experiment
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="content/notebooks.html">
+   Hands-on Practicals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/reading-isa-tab-from-disk-exploring-and-validating.html">
+     Reading ISA-Tab from files and Validating ISA-Tab files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/create-a-simple-ISA-descriptor.html">
+     Create a simple ISA descriptor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/create_2x2x2_factorial_design.html">
+     Create an ISA Study representing a 2x2x2 factorial design with single measurements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/create-a-repeated-treatment-design-with-ISA-descriptor.html">
+     Create a repeated treatment design with ISA descriptor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/isa-protocol-type-synonym-effect-on-assay-table.html">
+     ISA-API built-in semantic requirements for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       protocol
+      </span>
+      <span class="pre">
+       type
+      </span>
+     </code>
+     values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/light-sensitity-study-repeated-treatment-design.html">
+     Light Sensitivity Experiment:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/isa-metabolomics-study-design-create.html">
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/investigation-from-datascriptor-config-observational-variables-and-ontology-annotation.html">
+     Create ISA-API Investigation from Datascriptor Study Design configuration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/isa-tab-unused-sources-not-serialized-brapi.html">
+     Known Issue: unused ISA Source aren’t serialized to ISA-Tab
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
 
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -158,12 +264,7 @@
             <i class="fas fa-arrow-up"></i>
         </button>
         
-        <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    
-</div>
+        
         <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -185,21 +286,17 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-    </ul>
-</nav>
-
-
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -261,7 +358,10 @@
       </div>
     </div>
 
-    <script src="_static/js/index.js"></script>
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
     
   </body>
 </html>

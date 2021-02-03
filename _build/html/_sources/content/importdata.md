@@ -1,15 +1,15 @@
 # Importing data into ISA formats
-------------------------------------------------
+
 +++
 We have provided a number of modules that allow you to import data into
 ISA formats from well-known databases or services. Imports from these
 services is supported by modules found in the `isatools.net` package:
 
+***
 
 ## Obtaining Functional Genomics Data
 
 ### Importing from the European Nucleotide Archive to ISA-Tab
---------------------------------------------------------------
 
 Notice: this method depends on SAXON XSLT Processor
 
@@ -25,9 +25,9 @@ sra2isatab.sra_to_isatab_batch_convert('BN000001', 'your/path/to/saxon9.jar')
 
 This method returns the ISA-Tab files as a byte stream (`io.BytesIO`).
 
+***
 
 ### Importing MAGE-TAB to ISA
--------------------------
 
 To import metadata from MAGE-TAB files (e.g. from EBI ArrayExpress
 database), you can do the following to import a MAGE-TAB to ISA-Tab:
@@ -47,11 +47,12 @@ with open('your/path/to/magetab.idf.txt', 'r') as input_sampletab:
         magetab2json.convert(input_magetab, output_json)
 ```
 
+***
 
 ## Obtaining Metabolomics Data
 
 ### Importing from EMBL-EBI MetaboLights to ISA
-------------------------------------------------
+
 
 To import an MetaboLights study from the
 [MetaboLights](https://www.ebi.ac.uk/metabolights) as ISA-Tab files,
@@ -104,9 +105,9 @@ samples_and_files = MTBLS.get_data_files('MTBLS1', factor_query=query)
 #  ]
 ```
 
+***
 
 ### Importing from MetabolomicsWorkbench, to ISA-Tab
-------------------------------------------------
 
 To import a study from the [Metabolomics
 Workbench](http://www.metabolomicsworkbench.org/) as ISA-Tab files,
@@ -121,9 +122,9 @@ success, study_id, validate = mw2isa_convert(studyid="ST000367", outputdir='tmp/
 
 See `isa-api/isatools/convert/mw2isa.py`
 
+***
 
 ### Importing from Biocrates, to ISA-Tab
-------------------------------------
 
 Notice: this method depends on SAXON XSLT Processor
 
@@ -132,8 +133,9 @@ See `isa-api/isatools/net/biocrates2isatab.py`
 Importing from third-party formats is supported with our conversion
 modules found in the `isatools.convert` package:
 
+***
+
 ### Importing mzML to ISA-Tab
--------------------------
 
 To import metadata from mzML mass spectrometry files, the ISA API
 integrates with the `mzml2isa` tool from
@@ -144,9 +146,9 @@ from isatools.convert import mzml2isa
 mzml2isa.convert('your/path/to/mzml/files/', 'tmp/', "My Study ID")
 ```
 
+***
 
 ### Importing SampleTab to ISA
---------------------------
 
 ```{warning}
 

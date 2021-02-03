@@ -38,13 +38,14 @@ support is present in the `py2` source code branch in Github.
     role="doc"}
 13. `Known Issues </knownissues>`{.interpreted-text role="doc"}
 
+
 License
 -------
 
 This code is licensed under the [CPAL
 License](https://raw.githubusercontent.com/ISA-tools/isa-api/master/LICENSE.txt).
 
-::: {.toctree}
+<!-- ::: {.toctree}
 Installation \<installation\> ISA model \<isamodel\> Creating objects
 \<creation\> Tutorial: describing a simple experiment with objects
 \<creationtutorial\> Example: createSimpleISAtab.py
@@ -58,3 +59,4 @@ files stored in Github \<github\> Validating ISA-Tab and ISA JSON
 data from ISA formats \<exportdata\> Creating ISA content with a Sample
 and Assay plan \</sampleassayplan\> Known Issues \<knownissues\>
 :::
+ -->

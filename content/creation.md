@@ -1,7 +1,5 @@
 # Creating ISA content
 
-----	
-
 +++
 The ISA API provides a set of Python classes that you can use to create
 ISA content with.
@@ -22,9 +20,10 @@ read and understood the
 ISA formats are based on.
 ```
 
+***
 
 ## Getting started
----------------
+
 
 In `isatools.model`, the class `Investigation` is used as the top level
 container for all other ISA content. The `Investigation` Python class
@@ -109,7 +108,7 @@ as defined by the [ISA-Tab
 Specification](http://isa-specs.readthedocs.io/en/latest/isatab.html).
 
 
-```{.admonition} Hint
+```{admonition} Hint
 :class: tip
 
 Remember that when you `dump()` ISA content, you do it on the

@@ -1,13 +1,14 @@
 # Converting between ISA format
-----------
-+++
 
 The ISA API includes a set of functions to allow you to convert between
 ISA formats, as well as between ISA formats. These converters can be
 found in the `isatools.convert` package.
 
 ## Converting from ISA-Tab to ISA JSON
------------------------------------
+
+.
+***
+.
 
 To convert from a directory `./tabdir/` containing valid ISA-Tab files
 (e.g. one `i_investigation.txt` file, with at least one `s_...txt` and one `a_...txt` files):
@@ -36,7 +37,9 @@ To specify using the new parser, set the `use_new_parser` parameter to `True` by
 ```
 
 ## Converting from ISA JSON to ISA-Tab
------------------------------------
+.
+***
+.
 
 To convert from an ISA JSON file, for example a file named `isa.json`, one needs to provide as argument a target directory where to write out the
 ISA-Tab files: in our example, this directory is `./outdir/`, Therefore, the code looks as follows:
@@ -63,8 +66,7 @@ with open('isa.json') as file_pointer:
 
 The ISA API can also convert to and from other formats for import/export
 to relevant databases and services. For more on those conversions,
-please read the sections on [Importing data in ISA formats
-\</importdata\>]() and [Exporting data in ISA formats
-\</exportdata\>]().
+please read the sections on Importing data in ISA formats
+and Exporting data in ISA formats.
 
 ```

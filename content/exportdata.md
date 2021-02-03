@@ -1,13 +1,14 @@
 # Exporting data from ISA formats
-----------------------------------
+
 +++
 We have provided a number of modules that allow you to export data from
 ISA formats to formats ready for consumption by well-known databases or
 services in the following conversion modules found in the
 `isatools.convert` package:
 
+***
+
 ## Converting from ISA-Tab to SRA XML
-----------------------------------
 
 To convert from a directory `./tabdir/` containing valid ISA-Tab files
 to a write the SRA XML files to a target directory `./outdir/`,
@@ -35,8 +36,9 @@ Note that when subitting SRA XML to ENA, you need to supply broker
 information as shown above in the `sra_settings` JSON, customised to
 your own organisation\'s settings.
 
+***
+
 ## Converting from ISA JSON file to SRA XML
-----------------------------------------
 
 To convert from a a ISA JSON file `isa.json` directory to write out SRA
 XML files to a target directory `./outdir/`:
@@ -65,8 +67,10 @@ your own organisation\'s settings.
 To turn off pre-conversion validation, use `validate_first=False`. By
 default it is set to `validate_first=True`.
 
+***
+
 ## Converting ISA content to SampleTab
------------------------------------
+
 
 ```{warning}
 
@@ -105,8 +109,9 @@ with open('your/path/to/sampletab.txt', 'w') as output_sampletab:
     sampletab.dump(ISA, output_sampletab)
 ```
 
+***
+
 ## Exporting ISA content to MAGE-TAB
----------------------------------
 
 To export metadata to MAGE-TAB files (e.g. for EBI ArrayExpress
 database), you can do the following to export a ISA-Tab to MAGE-TAB:

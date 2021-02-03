@@ -1,3 +1,16 @@
+# ISA-API built-in semantic requirements for `protocol type` values
+
+## Abstract:
+
+In this notebook, we document the consequences of not using the right `protocol type` value in the context of specific ISA assays.
+
+It is therefore important that developers and users of the ISA-API be aware of the defautl ISA configuration and the list of protocol types used in the assay workflow associated with a given ISA Assay type, which is defined by a combination of `Measurement Type` and `Technology Type`.
+
+We have documented the full list of protocol types in the following document [link to document](https://www.todo.org)
+
+
+## Let's get the tools
+
 import os
 import isatools
 from isatools import isatab
@@ -24,7 +37,7 @@ import json
 from isatools.isajson import ISAJSONEncoder
 from isatools.isatab import dump_tables_to_dataframes
 
-# Create an empty Investigation object and set some values to the instance variables.
+## 1. Create an empty Investigation object and set some values to the instance variables.
 
 investigation = Investigation()
 # investigation.identifier = "i1"
@@ -76,6 +89,8 @@ publication.doi = "10.1038/sdata.2016.18" #https://doi.org/10.144534/rmh0000008"
 publication.status = OntologyAnnotation(term="published")
 study.publications.append(publication)
 
+## 2. Create the ISA Study graph
+
 # To create the study graph that corresponds to the contents of the study table file (the s_*.txt file), we need
 # to create a process sequence. To do this we use the Process class and attach it to the Study object's
 # 'process_sequence' list instance variable. Each process must be linked with a Protocol object that is attached to
@@ -101,99 +116,42 @@ prototype_sample.characteristics.append(characteristic_organism)
 
 study.samples = batch_create_materials(prototype_sample, n=3)  # creates a batch of 3 samples
 
-# Now we create a single Protocol object that represents our sample collection protocol, and attach it to the
-# study object. Protocols must be declared before we describe Processes, as a processing event of some sort
-# must execute some defined protocol. In the case of the class model, Protocols should therefore be declared
-# before Processes in order for the Process to be linked to one.
+Now we create a single Protocol object that represents our sample collection protocol, and attach it to the
+study object. Protocols must be declared before we describe Processes, as a processing event of some sort
+must execute some defined protocol. In the case of the class model, Protocols should therefore be declared
+before Processes in order for the Process to be linked to one.
 
 sample_collection_protocol = Protocol(name="sample collection",
                                       protocol_type=OntologyAnnotation(term="sample collection"))
 study.protocols.append(sample_collection_protocol)
 sample_collection_process = Process(executes_protocol=sample_collection_protocol)
 
-# Next, we link our materials to the Process. In this particular case, we are describing a sample collection
-# process that takes one source material, and produces three different samples.
-#
-# (source_material)->(sample collection)->[(sample_material-0), (sample_material-1), (sample_material-2)]
+Next, we link our materials to the Process. In this particular case, we are describing a sample collection
+process that takes one source material, and produces three different samples.
+
+(source_material)->(sample collection)->[(sample_material-0), (sample_material-1), (sample_material-2)]
 
 for src in study.sources:
     sample_collection_process.inputs.append(src)
 for sam in study.samples:
     sample_collection_process.outputs.append(sam)
 
-# Finally, attach the finished Process object to the study process_sequence. This can be done many times to
-# describe multiple sample collection events.
+
+Finally, attach the finished Process object to the study process_sequence. This can be done many times to describe multiple sample collection events.
 
 study.process_sequence.append(sample_collection_process)
 
-# Next, we build n Assay object and attach two protocols, extraction and sequencing.
-
-# assay = Assay(filename="a_assay.txt")
-# extraction_protocol = Protocol(name='extraction', protocol_type=OntologyAnnotation(term="material extraction"))
-# study.protocols.append(extraction_protocol)
-# sequencing_protocol = Protocol(name='sequencing', protocol_type=OntologyAnnotation(term="material sequencing"))
-# study.protocols.append(sequencing_protocol)
-
-# # To build out assay graphs, we enumereate the samples from the study-level, and for each sample we create an
-# # extraction process and a sequencing process. The extraction process takes as input a sample material, and produces
-# # an extract material. The sequencing process takes the extract material and produces a data file. This will
-# # produce three graphs, from sample material through to data, as follows:
-# #
-# # (sample_material-0)->(extraction)->(extract-0)->(sequencing)->(sequenced-data-0)
-# # (sample_material-1)->(extraction)->(extract-1)->(sequencing)->(sequenced-data-1)
-# # (sample_material-2)->(extraction)->(extract-2)->(sequencing)->(sequenced-data-2)
-# #
-# # Note that the extraction processes and sequencing processes are distinctly separate instances, where the three
-# # graphs are NOT interconnected.
-
-# for i, sample in enumerate(study.samples):
-
-#     # create an extraction process that executes the extraction protocol
-
-#     extraction_process = Process(executes_protocol=extraction_protocol)
-
-#     # extraction process takes as input a sample, and produces an extract material as output
-
-#     extraction_process.inputs.append(sample)
-#     material = Material(name="extract-{}".format(i))
-#     material.type = "Extract Name"
-#     extraction_process.outputs.append(material)
-
-#     # create a sequencing process that executes the sequencing protocol
-
-#     sequencing_process = Process(executes_protocol=sequencing_protocol)
-#     sequencing_process.name = "assay-name-{}".format(i)
-#     sequencing_process.inputs.append(extraction_process.outputs[0])
-
-#     # Sequencing process usually has an output data file
-
-#     datafile = DataFile(filename="sequenced-data-{}".format(i), label="Raw Data File")
-#     sequencing_process.outputs.append(datafile)
-
-#     # Ensure Processes are linked forward and backward. plink(from_process, to_process) is a function to set
-#     # these links for you. It is found in the isatools.model package
-
-#     plink(extraction_process, sequencing_process)
-
-#     # make sure the extract, data file, and the processes are attached to the assay
-
-#     assay.data_files.append(datafile)
-#     assay.samples.append(sample)
-#     assay.other_material.append(material)
-#     assay.process_sequence.append(extraction_process)
-#     assay.process_sequence.append(sequencing_process)
-#     assay.measurement_type = OntologyAnnotation(term="gene sequencing")
-#     assay.technology_type = OntologyAnnotation(term="nucleotide sequencing")
-
-
+## 3. Building an Assay object and attach two protocols, extraction and sequencing.
 
 # Next, we build n Assay object and attach two protocols, extraction and sequencing.
 
-assay_1 = Assay(filename="a_assay_1.txt")
+assay = Assay(filename="a_assay.txt")
+
 extraction_protocol = Protocol(name='extraction', protocol_type=OntologyAnnotation(term="material extraction"))
 study.protocols.append(extraction_protocol)
-sequencing_protocol_1 = Protocol(name='sequencing_1', protocol_type=OntologyAnnotation(term="nucleic acid sequencing"))
-study.protocols.append(sequencing_protocol_1)
+
+sequencing_protocol = Protocol(name='sequencing', protocol_type=OntologyAnnotation(term="material sequencing"))
+study.protocols.append(sequencing_protocol)
 
 # To build out assay graphs, we enumereate the samples from the study-level, and for each sample we create an
 # extraction process and a sequencing process. The extraction process takes as input a sample material, and produces
@@ -206,6 +164,70 @@ study.protocols.append(sequencing_protocol_1)
 #
 # Note that the extraction processes and sequencing processes are distinctly separate instances, where the three
 # graphs are NOT interconnected.
+
+for i, sample in enumerate(study.samples):
+
+    # create an extraction process that executes the extraction protocol
+
+    extraction_process = Process(executes_protocol=extraction_protocol)
+
+    # extraction process takes as input a sample, and produces an extract material as output
+
+    extraction_process.inputs.append(sample)
+    material = Material(name="extract-{}".format(i))
+    material.type = "Extract Name"
+    extraction_process.outputs.append(material)
+
+    # create a sequencing process that executes the sequencing protocol
+
+    sequencing_process = Process(executes_protocol=sequencing_protocol)
+    sequencing_process.name = "assay-name-{}".format(i)
+    sequencing_process.inputs.append(extraction_process.outputs[0])
+
+    # Sequencing process usually has an output data file
+
+    datafile = DataFile(filename="sequenced-data-{}".format(i), label="Raw Data File")
+    sequencing_process.outputs.append(datafile)
+
+    # Ensure Processes are linked forward and backward. plink(from_process, to_process) is a function to set
+    # these links for you. It is found in the isatools.model package
+
+    plink(extraction_process, sequencing_process)
+
+    # make sure the extract, data file, and the processes are attached to the assay
+
+    assay.data_files.append(datafile)
+    assay.samples.append(sample)
+    assay.other_material.append(material)
+    assay.process_sequence.append(extraction_process)
+    assay.process_sequence.append(sequencing_process)
+    assay.measurement_type = OntologyAnnotation(term="genome sequencing")
+    assay.technology_type = OntologyAnnotation(term="nucleotide sequencing")
+
+We start by creation an ISA Assay Object and declaring the two protocols required by the workflow.
+
+assay_1 = Assay(filename="a_assay_1.txt")
+
+extraction_protocol = Protocol(name='extraction', protocol_type=OntologyAnnotation(term="material extraction"))
+study.protocols.append(extraction_protocol)
+
+sequencing_protocol_1 = Protocol(name='sequencing_1', protocol_type=OntologyAnnotation(term="nucleic acid sequencing"))
+study.protocols.append(sequencing_protocol_1)
+
+To build out assay graphs, we enumereate the samples from the study-level, and for each sample we create an
+extraction process and a sequencing process. The extraction process takes as input a sample material, and produces
+an extract material. The sequencing process takes the extract material and produces a data file. This will
+produce three graphs, from sample material through to data, as follows:
+
+`(sample_material-0)->(extraction)->(extract-0)->(sequencing)->(sequenced-data-0)`
+
+`(sample_material-1)->(extraction)->(extract-1)->(sequencing)->(sequenced-data-1)`
+
+`(sample_material-2)->(extraction)->(extract-2)->(sequencing)->(sequenced-data-2)`
+
+:warning: 
+Note that the extraction processes and sequencing processes are distinctly separate instances, where the three
+graphs are NOT interconnected.
 
 for i, sample in enumerate(study.samples):
 
@@ -243,12 +265,10 @@ for i, sample in enumerate(study.samples):
     assay_1.other_material.append(material)
     assay_1.process_sequence.append(extraction_process)
     assay_1.process_sequence.append(sequencing_process)
-    assay_1.measurement_type = OntologyAnnotation(term="genome sequencing"
+    assay_1.measurement_type = OntologyAnnotation(term="genome sequencing")
     assay_1.technology_type = OntologyAnnotation(term="nucleotide sequencing")
 
-
-
-# Next, we build n Assay object and attach two protocols, extraction and sequencing.
+# Next, we build n Assay objects and attach the protocols, extraction, sequencing and a data transformation step
 
 assay_2 = Assay(filename="a_assay_2.txt")
 extraction_protocol = Protocol(name='nucleic acid extraction', protocol_type=OntologyAnnotation(term="nucleic acid extraction"))
@@ -320,10 +340,11 @@ for i, sample in enumerate(study.samples):
     assay_2.technology_type = OntologyAnnotation(term="nucleotide sequencing")
 
 
+print(assay_2)
 
 # attach the assays to the study
 
-# study.assays.append(assay)
+study.assays.append(assay)
 study.assays.append(assay_1)
 study.assays.append(assay_2)
 
@@ -332,19 +353,21 @@ dataframes = dump_tables_to_dataframes(investigation)
 for key in dataframes.keys():
     display(key)
 
-dataframes['a_assay_2.txt']
+ dataframes['a_assay.txt']
 
-# dataframes['a_assay_1.txt']
+ dataframes['a_assay_1.txt']
 
-# dataframes['a_assay_2.txt']
+ dataframes['a_assay_2.txt']
 
-# dataframe = dump_tables_to_dataframes(investigation)
+isatab.dump(investigation,'./notebook-output/isa-protocol-type-assay/') 
 
-# print(dataframe)
-
-isatab.dump(investigation,'./notebook-output/') 
-
-my_json_report = isatab.validate(open(os.path.join('./notebook-output/', 'i_investigation.txt')))
+my_json_report = isatab.validate(open(os.path.join('./notebook-output/isa-protocol-type-assay/', 'i_investigation.txt')))
 
 print(my_json_report)
 
+## About this notebook
+
+- authors: philippe.rocca-serra@oerc.ox.ac.uk, massimiliano.izzo@oerc.ox.ac.uk
+- license: CC-BY 4.0
+- support: isatools@googlegroups.com
+- issue tracker: https://github.com/ISA-tools/isa-api/issues

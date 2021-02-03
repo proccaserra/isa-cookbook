@@ -7,23 +7,24 @@ Requires: Python 3.4, 3.5 or 3.6; additionally Java 1.6+ for SRA and
 Biocrates importers
 ```
 
+***
 
 ## Installation from the Python Package Index
--------------------------
 
 The ISA API is published on the Python Package Index (PyPI) as the
 [isatools package](https://pypi.python.org/pypi/isatools/), and you can use `pip` to
 install it.
 
-```python
+```bash
 $ pip install isatools
 ```
 
 Now you're ready to get started!
 
+***
 
 ## Installation from sources
--------------------------
+
 
 The ISA-API source code is hosted on GitHub at:
 <https://github.com/ISA-tools/isa-api>
@@ -97,8 +98,8 @@ documentation](https://virtualenv.readthedocs.org).
 `pyenv` is an alternative to virtual, read all about [pyenv here](https://github.com/pyenv/pyenv) or [here](https://realpython.com/intro-to-pyenv/).
 ```
 
+***
 ## Running tests
--------------
 
 The tests in the ISA-API rely on datasets available in the test branch
 of the [ISAdatasets

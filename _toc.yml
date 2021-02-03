@@ -1,23 +1,26 @@
-- file: content/index
-
+file: content/index
+sections:
 - file: content/installation
 - file: content/isamodel
 - file: content/reading
-- file: content/creation
-- file: content/creation_tutorial
 - file: content/validation
-- file: content/conversions
+- file: content/creation
 - file: content/importdata
 - file: content/exportdata
+- file: content/conversions
 - file: content/examples
 - file: content/github
 - file: content/knownissues
+- file: content/creationtutorial
 - file: content/notebooks
   sections:
-    - file: content/notebooks/isa-create-sample-assay-plan-htp-imaging.ipynb
-    - file: content/notebooks/isa-create-sample-assay-plan-lc-dad.ipynb
+    - file: content/notebooks/reading-isa-tab-from-disk-exploring-and-validating.ipynb
+    - file: content/notebooks/create-a-simple-ISA-descriptor.ipynb
+    - file: content/notebooks/create_2x2x2_factorial_design.ipynb
+    - file: content/notebooks/create-a-repeated-treatment-design-with-ISA-descriptor.ipynb
     - file: content/notebooks/isa-protocol-type-synonym-effect-on-assay-table.ipynb
+    - file: content/notebooks/light-sensitity-study-repeated-treatment-design.ipynb
+    - file: content/notebooks/isa-metabolomics-study-design-create.ipynb    
+    - file: content/notebooks/investigation-from-datascriptor-config-observational-variables-and-ontology-annotation.ipynb
+    - file: content/notebooks/isa-tab-unused-sources-not-serialized-brapi.ipynb
 
-- file: content/notebooks/isa-create-sample-assay-plan-htp-imaging.ipynb
-- file: content/notebooks/isa-create-sample-assay-plan-lc-dad.ipynb
-- file: content/notebooks/isa-protocol-type-synonym-effect-on-assay-table.ipynb

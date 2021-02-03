@@ -1,5 +1,5 @@
-ISA data model
-==============
+# ISA data model
+
 +++
 
 For the ISA tools API, we have represented the ISA model version 1.0
@@ -7,6 +7,7 @@ For the ISA tools API, we have represented the ISA model version 1.0
 schemas](http://json-schema.org/), which provide the information the ISA
 model maintains for each of the objects.
 
+***
 
 ```{figure} ../_static/images/isa-model.png
 :height: 450px
@@ -15,7 +16,7 @@ model maintains for each of the objects.
 an overview of the ISA model
 ```
 
-
+***
 
 The objective of designing and developing JSON schemas is to support a
 **new serialization of the ISA model in JSON format**, in addition to

@@ -1,12 +1,12 @@
-## Validating ISA-Tab and ISA JSON
------
+# Validating ISA-Tab and ISA JSON
+
 +++
 
 Using the ISA API you can validate ISA-Tab and ISA JSON files.
 
-### Validating ISA-Tab
-------------------
+***
 
+## Validating ISA-Tab
 
 * To validate ISA-Tab files in a given directory `./tabdir/` against the default reference ISA xml configuration (isaconfig-default_v2015-07-02),  do something like the following, with for instance a folder called `BII-S-3`:
 
@@ -110,10 +110,9 @@ the ISA sample datasets used to test the ISA tools also contains studies which h
 BII-S-4 and BII-S-5 will fail validation owing to an error in the investigation file (`Publication list` instead of `Publication `*L*`ist`)
 ```
 
-
+***
 
 ### Validating ISA JSON
--------------------
 
 To validate an ISA JSON file against the ISA JSON version 1.0
 specification you can use do so by doing this by doing something like:
@@ -135,9 +134,9 @@ data](https://github.com/ISA-tools/ISAdatasets/tree/tests/json) found in
 The validator will return a JSON-formatted report of warnings and
 errors.
 
+***
 
 ### Batch validation of ISA-Tab and ISA-JSON
-----------------------------------------
 
 To validate a batch of ISA-Tabs or ISA-JSONs, you can use the
 `batch_validate()` function.
@@ -167,8 +166,9 @@ my_json_report = isajson.batch_validate(my_jsons, '/path/to/report.txt')
 In both cases, the batch validation will return a JSON-formatted report
 of warnings and errors.
 
+***
+
 ### Reformatting JSON reports
--------------------------
 
 The JSON reports produced by the validators can be reformatted using a
 function found in the `isatools.utils` module.
