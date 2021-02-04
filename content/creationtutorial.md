@@ -1,5 +1,6 @@
-Tutorial: describing a simple experiment
+Describing a simple experiment with `isa objects`
 ========================================
++++
 
 In this section, we provide a basic example of creating a complete
 experiment descriptor using the ISA API\'s model classes. The descriptor
@@ -7,6 +8,7 @@ is not complete and realistic, but it demonstrates the range of
 component classes that you can use to create ISA content, including
 things like sample characteristics, ontology annotations and units.
 
+---
 
 ```{admonition} IMPORTANT
 :class: tip

@@ -1,7 +1,20 @@
-Known issues
+# Release Notes
 ============
++++
 
 List of ISA-API changes and fixes:
+
+***
+
+isatools v0.12 package
+
+***
+
+isatools v0.11 package
+
+***
+
+isatools v0.10 package
 
 ***
 

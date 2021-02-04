@@ -2,7 +2,7 @@
 
 +++
 
-## A set of Jupyter Notebooks to get familiar with the ISA-API
+## Jupyter Notebooks to familiarize with the ISA-API
 
 ### The fundamentals: reading and validating ISA documents.
 
@@ -15,7 +15,7 @@
 4. [create_2x2x2_factorial_design.ipynb](./notebooks/create_2x2x2_factorial_design.ipynb)
 5. [light-sensitity-study-repeated-treatment-design.ipynb](./notebooks/light-sensitity-study-repeated-treatment-design.ipynb)
 
-### Hard-coded strings in the ISA-API
+### ISA-API hard coded strings
 
 6. [isa-protocol-type-synonym-effect-on-assay-table.ipynb](./notebooks/isa-protocol-type-synonym-effect-on-assay-table.ipynb)
 

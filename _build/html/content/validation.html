@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Validating ISA-Tab and ISA JSON &#8212; The ISA cookbook</title>
+    <title>Validating ISA-Tab and ISA-JSON &#8212; The ISA cookbook</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -60,8 +60,8 @@
     <link rel="shortcut icon" href="../_static/isa.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Creating ISA content" href="creation.html" />
-    <link rel="prev" title="Reading in ISA-Tab or ISA JSON" href="reading.html" />
+    <link rel="next" title="Converting between ISA format" href="conversions.html" />
+    <link rel="prev" title="Describing a simple experiment with isa objects" href="creationtutorial.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -70,8 +70,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://proccaserra.github.io/isa-cookbook/content/validation.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Validating ISA-Tab and ISA JSON" />
-<meta property="og:description" content="Validating ISA-Tab and ISA JSON    Using the ISA API you can validate ISA-Tab and ISA JSON files.    Validating ISA-Tab  To validate ISA-Tab files in a given di" />
+<meta property="og:title"       content="Validating ISA-Tab and ISA-JSON" />
+<meta property="og:description" content="Validating ISA-Tab and ISA-JSON    Syntax validation is available from the ISA API. Validation comes in two flavors, whether you need validate ISA-Tab documents" />
 <meta property="og:image"       content="https://proccaserra.github.io/isa-cookbook/_static/isa_footer_logo.svg" />
 
 <meta name="twitter:card" content="summary" />
@@ -110,7 +110,7 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="installation.html">
-   ISA-API Installation
+   ISA-API installation
   </a>
  </li>
  <li class="toctree-l1">
@@ -123,14 +123,32 @@
    Reading in ISA-Tab or ISA JSON
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Validating ISA-Tab and ISA JSON
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="creation.html">
    Creating ISA content
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="creationtutorial.html">
+   Describing a simple experiment with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     isa
+    </span>
+    <span class="pre">
+     objects
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Validating ISA-Tab and ISA-JSON
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conversions.html">
+   Converting between ISA format
   </a>
  </li>
  <li class="toctree-l1">
@@ -143,15 +161,34 @@
    Exporting data from ISA formats
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="conversions.html">
-   Converting between ISA format
-  </a>
- </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="examples.html">
-   Example programs using the ISA API
+   ISA API example programs
   </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/example-createSimpleISAtab.html">
+     createSimpleISAtab.py
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/example-createSimpleISAJSON.html">
+     createSimpleISAjson.py
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/example-validateISAtab.html">
+     validateISAtab.py
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/example-validateISAjson.html">
+     validateISAjson.py
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="github.html">
@@ -160,12 +197,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="knownissues.html">
-   Known issues
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="creationtutorial.html">
-   Tutorial: describing a simple experiment
+   Release Notes
   </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
@@ -352,8 +384,8 @@
               <div>
                 
   <div class="section" id="validating-isa-tab-and-isa-json">
-<h1>Validating ISA-Tab and ISA JSON<a class="headerlink" href="#validating-isa-tab-and-isa-json" title="Permalink to this headline">¶</a></h1>
-<p>Using the ISA API you can validate ISA-Tab and ISA JSON files.</p>
+<h1>Validating ISA-Tab and ISA-JSON<a class="headerlink" href="#validating-isa-tab-and-isa-json" title="Permalink to this headline">¶</a></h1>
+<p>Syntax validation is available from the ISA API. Validation comes in two flavors, whether you need validate ISA-Tab documents or want to check ISA-JSON files against the JSONSchema expression of the ISA model.</p>
 <hr class="docutils" />
 <div class="section" id="validating-isa-tab">
 <h2>Validating ISA-Tab<a class="headerlink" href="#validating-isa-tab" title="Permalink to this headline">¶</a></h2>
@@ -540,8 +572,8 @@ you can do something like:</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="reading.html" title="previous page">Reading in ISA-Tab or ISA JSON</a>
-    <a class='right-next' id="next-link" href="creation.html" title="next page">Creating ISA content</a>
+    <a class='left-prev' id="prev-link" href="creationtutorial.html" title="previous page">Describing a simple experiment with <code class="docutils literal notranslate"><span class="pre">isa</span> <span class="pre">objects</span></code></a>
+    <a class='right-next' id="next-link" href="conversions.html" title="next page">Converting between ISA format</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

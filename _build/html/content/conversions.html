@@ -60,8 +60,8 @@
     <link rel="shortcut icon" href="../_static/isa.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Example programs using the ISA API" href="examples.html" />
-    <link rel="prev" title="Exporting data from ISA formats" href="exportdata.html" />
+    <link rel="next" title="Importing data into ISA formats" href="importdata.html" />
+    <link rel="prev" title="Validating ISA-Tab and ISA-JSON" href="validation.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -110,7 +110,7 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="installation.html">
-   ISA-API Installation
+   ISA-API installation
   </a>
  </li>
  <li class="toctree-l1">
@@ -124,13 +124,31 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="validation.html">
-   Validating ISA-Tab and ISA JSON
+  <a class="reference internal" href="creation.html">
+   Creating ISA content
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="creation.html">
-   Creating ISA content
+  <a class="reference internal" href="creationtutorial.html">
+   Describing a simple experiment with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     isa
+    </span>
+    <span class="pre">
+     objects
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="validation.html">
+   Validating ISA-Tab and ISA-JSON
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Converting between ISA format
   </a>
  </li>
  <li class="toctree-l1">
@@ -143,15 +161,14 @@
    Exporting data from ISA formats
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Converting between ISA format
-  </a>
- </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="examples.html">
    Example programs using the ISA API
   </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="github.html">
@@ -160,12 +177,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="knownissues.html">
-   Known issues
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="creationtutorial.html">
-   Tutorial: describing a simple experiment
+   Release Notes
   </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
@@ -344,11 +356,9 @@
 <p>The ISA API includes a set of functions to allow you to convert between
 ISA formats, as well as between ISA formats. These converters can be
 found in the <code class="docutils literal notranslate"><span class="pre">isatools.convert</span></code> package.</p>
+<hr class="docutils" />
 <div class="section" id="converting-from-isa-tab-to-isa-json">
 <h2>Converting from ISA-Tab to ISA JSON<a class="headerlink" href="#converting-from-isa-tab-to-isa-json" title="Permalink to this headline">¶</a></h2>
-<p>.</p>
-<hr class="docutils" />
-<p>.</p>
 <p>To convert from a directory <code class="docutils literal notranslate"><span class="pre">./tabdir/</span></code> containing valid ISA-Tab files
 (e.g. one <code class="docutils literal notranslate"><span class="pre">i_investigation.txt</span></code> file, with at least one <code class="docutils literal notranslate"><span class="pre">s_...txt</span></code> and one <code class="docutils literal notranslate"><span class="pre">a_...txt</span></code> files):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">isatools.convert</span> <span class="kn">import</span> <span class="n">isatab2json</span>
@@ -368,11 +378,9 @@ To specify using the new parser, set the <code class="docutils literal notransla
 <code class="docutils literal notranslate"><span class="pre">isatab2json.convert('./my/path/',</span> <span class="pre">use_new_parser=True)</span></code>.</p>
 </div>
 </div>
+<hr class="docutils" />
 <div class="section" id="converting-from-isa-json-to-isa-tab">
 <h2>Converting from ISA JSON to ISA-Tab<a class="headerlink" href="#converting-from-isa-json-to-isa-tab" title="Permalink to this headline">¶</a></h2>
-<p>.</p>
-<hr class="docutils" />
-<p>.</p>
 <p>To convert from an ISA JSON file, for example a file named <code class="docutils literal notranslate"><span class="pre">isa.json</span></code>, one needs to provide as argument a target directory where to write out the
 ISA-Tab files: in our example, this directory is <code class="docutils literal notranslate"><span class="pre">./outdir/</span></code>, Therefore, the code looks as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">isatools.convert</span> <span class="kn">import</span> <span class="n">json2isatab</span>
@@ -428,8 +436,8 @@ and Exporting data in ISA formats.</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="exportdata.html" title="previous page">Exporting data from ISA formats</a>
-    <a class='right-next' id="next-link" href="examples.html" title="next page">Example programs using the ISA API</a>
+    <a class='left-prev' id="prev-link" href="validation.html" title="previous page">Validating ISA-Tab and ISA-JSON</a>
+    <a class='right-next' id="next-link" href="importdata.html" title="next page">Importing data into ISA formats</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

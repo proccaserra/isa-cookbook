@@ -1,5 +1,6 @@
-ISA-API Installation
+ISA-API installation
 ====================
+
 
 ```{admonition} IMPORTANT
 :class: tip

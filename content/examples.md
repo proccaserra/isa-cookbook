@@ -1,5 +1,5 @@
-Example programs using the ISA API
-==================================
+ISA API example programs 
+========================
 
 The ISA API comes with a set of example programs demonstrating how to
 use the `isatools` Python package. These can be imported from the
@@ -10,13 +10,13 @@ documentation, and you can also view the source code on GitHub.
 Simple Example Programs
 -----------------------
 
--   \`createSimpleISAtab.py \<example-createSimpleISAtab\>\`: Uses the
+-   [createSimpleISAtab.py](./examples/example-createSimpleISAtab): Uses the
     ISA model classes to construct ISA content and write it out as an
     ISA-Tab.
--   \`createSimpleISAJSON.py \<example-createSimpleISAJSON\>\`: Uses the
+-   [createSimpleISAJSON.py](./examples/example-createSimpleISAJSON): Uses the
     ISA model classes to construct ISA content and write it out as an
     ISA-JSON.
--   \`validateISAtab.py \<example-validateISAtab\>\`: Validates one or
+-   [validateISAtab.py](./examples/example-validateISAtab): Validates one or
     more ISA-Tab archives.
--   \`validateISAjson.py \<example-validateISAjson\>\`: Validates one or
+-   [validateISAjson.py](./examples/example-validateISAjson): Validates one or
     more ISA-JSON files.

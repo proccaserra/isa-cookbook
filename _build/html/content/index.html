@@ -60,7 +60,7 @@
     <link rel="shortcut icon" href="../_static/isa.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ISA-API Installation" href="installation.html" />
+    <link rel="next" title="ISA-API installation" href="installation.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -109,7 +109,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="installation.html">
-   ISA-API Installation
+   ISA-API installation
   </a>
  </li>
  <li class="toctree-l1">
@@ -123,13 +123,31 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="validation.html">
-   Validating ISA-Tab and ISA JSON
+  <a class="reference internal" href="creation.html">
+   Creating ISA content
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="creation.html">
-   Creating ISA content
+  <a class="reference internal" href="creationtutorial.html">
+   Describing a simple experiment with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     isa
+    </span>
+    <span class="pre">
+     objects
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="validation.html">
+   Validating ISA-Tab and ISA-JSON
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conversions.html">
+   Converting between ISA format
   </a>
  </li>
  <li class="toctree-l1">
@@ -142,15 +160,34 @@
    Exporting data from ISA formats
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="conversions.html">
-   Converting between ISA format
-  </a>
- </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="examples.html">
-   Example programs using the ISA API
+   ISA API example programs
   </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/example-createSimpleISAtab.html">
+     createSimpleISAtab.py
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/example-createSimpleISAJSON.html">
+     createSimpleISAjson.py
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/example-validateISAtab.html">
+     validateISAtab.py
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/example-validateISAjson.html">
+     validateISAjson.py
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="github.html">
@@ -159,12 +196,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="knownissues.html">
-   Known issues
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="creationtutorial.html">
-   Tutorial: describing a simple experiment
+   Release Notes
   </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
@@ -349,48 +381,25 @@ validation.</p>
 <p><code class="docutils literal notranslate"><span class="pre">isatools</span></code> is currently only supported in Python 3.4 and 3.5. Python 2.7
 support is present in the <code class="docutils literal notranslate"><span class="pre">py2</span></code> source code branch in Github.</p>
 </div>
+<hr class="docutils" />
 <ol class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Installation</span> <span class="pre">&lt;/installation&gt;</span></code>{.interpreted-text role=”doc”}</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ISA</span> <span class="pre">model</span> <span class="pre">&lt;/isamodel&gt;</span></code>{.interpreted-text role=”doc”}</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Reading</span> <span class="pre">in</span> <span class="pre">ISA-Tab</span> <span class="pre">or</span> <span class="pre">ISA</span> <span class="pre">JSON</span> <span class="pre">&lt;/reading&gt;</span></code>{.interpreted-text role=”doc”}</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Creating</span> <span class="pre">objects</span> <span class="pre">&lt;/creation&gt;</span></code>{.interpreted-text role=”doc”}</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Tutorial:</span> <span class="pre">describing</span> <span class="pre">a</span> <span class="pre">simple</span> <span class="pre">experiment</span> <span class="pre">with</span> <span class="pre">objects</span> <span class="pre">&lt;creationtutorial&gt;</span></code>{.interpreted-text
-role=”doc”}</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Creating</span> <span class="pre">ISA</span> <span class="pre">objects</span> <span class="pre">based</span> <span class="pre">on</span> <span class="pre">study-design</span> <span class="pre">&lt;/studydesigncreation&gt;</span></code>{.interpreted-text
-role=”doc”}</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Converting</span> <span class="pre">between</span> <span class="pre">ISA</span> <span class="pre">formats</span> <span class="pre">&lt;/conversions&gt;</span></code>{.interpreted-text
-role=”doc”}</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Downloading</span> <span class="pre">files</span> <span class="pre">stored</span> <span class="pre">in</span> <span class="pre">Github</span> <span class="pre">&lt;/github&gt;</span></code>{.interpreted-text
-role=”doc”}</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Validating</span> <span class="pre">ISA-Tab</span> <span class="pre">and</span> <span class="pre">ISA</span> <span class="pre">JSON</span> <span class="pre">&lt;/validation&gt;</span></code>{.interpreted-text
-role=”doc”}</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Importing</span> <span class="pre">data</span> <span class="pre">in</span> <span class="pre">ISA</span> <span class="pre">formats</span> <span class="pre">&lt;/importdata&gt;</span></code>{.interpreted-text
-role=”doc”}</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Exporting</span> <span class="pre">data</span> <span class="pre">in</span> <span class="pre">ISA</span> <span class="pre">formats</span> <span class="pre">&lt;/exportdata&gt;</span></code>{.interpreted-text
-role=”doc”}</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Creating</span> <span class="pre">ISA</span> <span class="pre">content</span> <span class="pre">with</span> <span class="pre">a</span> <span class="pre">Sample</span> <span class="pre">and</span> <span class="pre">Assay</span> <span class="pre">plan</span> <span class="pre">&lt;/sampleassayplan&gt;</span></code>{.interpreted-text
-role=”doc”}</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Known</span> <span class="pre">Issues</span> <span class="pre">&lt;/knownissues&gt;</span></code>{.interpreted-text role=”doc”}</p></li>
+<li><p><a class="reference internal" href="installation.html"><span class="doc std std-doc">Installation</span></a></p></li>
+<li><p><a class="reference internal" href="isamodel.html"><span class="doc std std-doc">ISA model</span></a></p></li>
+<li><p><a class="reference internal" href="reading.html"><span class="doc std std-doc">Reading in ISA-Tab or ISA JSON</span></a></p></li>
+<li><p><a class="reference internal" href="creation.html"><span class="doc std std-doc">Creating objects</span></a></p></li>
+<li><p><a class="reference internal" href="creationtutorial.html"><span class="doc std std-doc">Describing a simple experiment with ISA objects</span></a></p></li>
+<li><p><a class="reference internal" href="validation.html"><span class="doc std std-doc">Validating ISA-Tab and ISA JSON</span></a></p></li>
+<li><p><a class="reference internal" href="conversions.html"><span class="doc std std-doc">Converting between ISA formats</span></a></p></li>
+<li><p><a class="reference internal" href="github.html"><span class="doc std std-doc">Downloading files stored in Github</span></a></p></li>
+<li><p><a class="reference internal" href="importdata.html"><span class="doc std std-doc">Importing data in ISA formats</span></a></p></li>
+<li><p><a class="reference internal" href="exportdata.html"><span class="doc std std-doc">Exporting data in ISA formats</span></a></p></li>
+<li><p><a class="reference internal" href="knownissues.html"><span class="doc std std-doc">Release notes</span></a></p></li>
 </ol>
+<hr class="docutils" />
 <div class="section" id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
 <p>This code is licensed under the <a class="reference external" href="https://raw.githubusercontent.com/ISA-tools/isa-api/master/LICENSE.txt">CPAL
 License</a>.</p>
-<!-- ::: {.toctree}
-Installation \<installation\> ISA model \<isamodel\> Creating objects
-\<creation\> Tutorial: describing a simple experiment with objects
-\<creationtutorial\> Example: createSimpleISAtab.py
-\<example-createSimpleISAtab\> Example: createSimpleISAJSON.py
-\<example-createSimpleISAJSON\> Example: validateISAtab.py
-\<example-validateISAtab\> Example: validateISAjson.py
-\<example-validateISAjson\> Converting between ISA formats
-\<conversions\> Contributing your work \<contributing\> Downloading
-files stored in Github \<github\> Validating ISA-Tab and ISA JSON
-\<validation\> Importing data in ISA formats \<importdata\> Exporting
-data from ISA formats \<exportdata\> Creating ISA content with a Sample
-and Assay plan \</sampleassayplan\> Known Issues \<knownissues\>
-:::
- -->
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -424,7 +433,7 @@ and Assay plan \</sampleassayplan\> Known Issues \<knownissues\>
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="installation.html" title="next page">ISA-API Installation</a>
+    <a class='right-next' id="next-link" href="installation.html" title="next page">ISA-API installation</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

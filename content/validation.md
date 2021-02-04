@@ -1,8 +1,9 @@
-# Validating ISA-Tab and ISA JSON
+# Validating ISA-Tab and ISA-JSON
 
 +++
 
-Using the ISA API you can validate ISA-Tab and ISA JSON files.
+
+Syntax validation is available from the ISA API. Validation comes in two flavors, whether you need validate ISA-Tab documents or want to check ISA-JSON files against the JSONSchema expression of the ISA model.
 
 ***
 

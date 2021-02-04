@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Tutorial: describing a simple experiment &#8212; The ISA cookbook</title>
+    <title>Describing a simple experiment with isa objects &#8212; The ISA cookbook</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -60,8 +60,8 @@
     <link rel="shortcut icon" href="../_static/isa.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Hands-on Practicals" href="notebooks.html" />
-    <link rel="prev" title="Known issues" href="knownissues.html" />
+    <link rel="next" title="Validating ISA-Tab and ISA-JSON" href="validation.html" />
+    <link rel="prev" title="Creating ISA content" href="creation.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -70,8 +70,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://proccaserra.github.io/isa-cookbook/content/creationtutorial.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Tutorial: describing a simple experiment" />
-<meta property="og:description" content="Tutorial: describing a simple experiment  In this section, we provide a basic example of creating a complete experiment descriptor using the ISA API’s model cla" />
+<meta property="og:title"       content="Describing a simple experiment with isa objects" />
+<meta property="og:description" content="Describing a simple experiment with isa objects    In this section, we provide a basic example of creating a complete experiment descriptor using the ISA API’s " />
 <meta property="og:image"       content="https://proccaserra.github.io/isa-cookbook/_static/isa_footer_logo.svg" />
 
 <meta name="twitter:card" content="summary" />
@@ -110,7 +110,7 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="installation.html">
-   ISA-API Installation
+   ISA-API installation
   </a>
  </li>
  <li class="toctree-l1">
@@ -124,13 +124,31 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="validation.html">
-   Validating ISA-Tab and ISA JSON
+  <a class="reference internal" href="creation.html">
+   Creating ISA content
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Describing a simple experiment with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     isa
+    </span>
+    <span class="pre">
+     objects
+    </span>
+   </code>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="creation.html">
-   Creating ISA content
+  <a class="reference internal" href="validation.html">
+   Validating ISA-Tab and ISA-JSON
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conversions.html">
+   Converting between ISA format
   </a>
  </li>
  <li class="toctree-l1">
@@ -143,15 +161,14 @@
    Exporting data from ISA formats
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="conversions.html">
-   Converting between ISA format
-  </a>
- </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="examples.html">
    Example programs using the ISA API
   </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="github.html">
@@ -160,12 +177,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="knownissues.html">
-   Known issues
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Tutorial: describing a simple experiment
+   Release Notes
   </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
@@ -320,13 +332,14 @@
         
               <div>
                 
-  <div class="section" id="tutorial-describing-a-simple-experiment">
-<h1>Tutorial: describing a simple experiment<a class="headerlink" href="#tutorial-describing-a-simple-experiment" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="describing-a-simple-experiment-with-isa-objects">
+<h1>Describing a simple experiment with <code class="docutils literal notranslate"><span class="pre">isa</span> <span class="pre">objects</span></code><a class="headerlink" href="#describing-a-simple-experiment-with-isa-objects" title="Permalink to this headline">¶</a></h1>
 <p>In this section, we provide a basic example of creating a complete
 experiment descriptor using the ISA API’s model classes. The descriptor
 is not complete and realistic, but it demonstrates the range of
 component classes that you can use to create ISA content, including
 things like sample characteristics, ontology annotations and units.</p>
+<hr class="docutils" />
 <div class="tip admonition">
 <p class="admonition-title">IMPORTANT</p>
 <p>As a pre-requisite to using ISA model please make sure you have read and
@@ -579,8 +592,8 @@ and
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="knownissues.html" title="previous page">Known issues</a>
-    <a class='right-next' id="next-link" href="notebooks.html" title="next page">Hands-on Practicals</a>
+    <a class='left-prev' id="prev-link" href="creation.html" title="previous page">Creating ISA content</a>
+    <a class='right-next' id="next-link" href="validation.html" title="next page">Validating ISA-Tab and ISA-JSON</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
